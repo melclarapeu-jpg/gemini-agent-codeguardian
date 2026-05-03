@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeGuardian Streaming</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>CodeGuardian Academy</h1>
+      <p class="subtitle">Trilha premium de prompts e engenharia de agentes</p>
+    </div>
+    <div class="topbar-actions">
+      <label class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Buscar módulo, tema ou prompt..." />
+      </label>
+      <button id="filterFavoritesBtn" class="ghost-btn" aria-pressed="false">Somente favoritos</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="progress-panel">
+      <div>
+        <h2>Seu progresso</h2>
+        <p id="progressLabel">0 de 0 módulos concluídos</p>
+      </div>
+      <div class="progress-track" aria-label="Barra de progresso">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Módulos</h2>
+        <span id="moduleCount"></span>
+      </div>
+      <div id="moduleGrid" class="module-grid"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Bônus</h2>
+      </div>
+      <div id="bonusGrid" class="bonus-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="moduleModal" class="modal">
+    <article class="modal-content">
+      <button id="closeModalBtn" class="close-btn" aria-label="Fechar">×</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+      <div class="modal-meta">
+        <span id="modalLevel" class="pill"></span>
+        <span id="modalDuration" class="pill"></span>
+      </div>
+      <div class="prompt-card">
+        <h4>Prompt recomendado</h4>
+        <pre id="modalPrompt"></pre>
+        <button id="copyPromptBtn" class="primary-btn">Copiar prompt</button>
+      </div>
+      <div class="modal-actions">
+        <button id="toggleCompleteBtn" class="ghost-btn"></button>
+      </div>
+    </article>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
